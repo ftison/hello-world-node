@@ -45,6 +45,6 @@ jobs:
 
       - deploy: 
           command: |
-              oc login -u ${CLUSTER_USERNAME} --token=${CLUSTER_PASSWORD} ${CLUSTER_URL} --insecure-skip-tls-verify=true
+              oc login --token=${CLUSTER_PASSWORD} ${CLUSTER_URL} --insecure-skip-tls-verify=true
               oc project ${PROJECT_NAME}
               oc start-build ${APP_NAME} --from-dir=.
